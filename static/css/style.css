@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+    color: rgb(246, 9, 9);
+    font-size: 45px;
+    font-family: "Lucida Handwriting", "Courier New", "cursive";
+}
+
+
+.label{
+    background-color: rgb(62, 175, 94);
+    opacity: 0.8;
+}
