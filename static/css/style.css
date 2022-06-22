@@ -1,12 +1,33 @@
 h1{
     text-align: center;
-    color: rgb(246, 9, 9);
-    font-size: 45px;
-    font-family: "Lucida Handwriting", "Courier New", "cursive";
+    color: rgb(74, 148, 163);
+    font-size: '100px; font-weight: bold';
+    font-family: 'Sofia';
 }
 
+h5{
+    color:rgb(195, 102, 31);
+    font-family: 'Indie Flower', cursive;
+    
+}
 
-.label{
-    background-color: rgb(62, 175, 94);
-    opacity: 0.8;
+h4{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+}
+
+.form{
+    margin:30px 0px 10px 50px; 
+}
+
+b{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.s_i{
+    margin:20px 10px;
+}   
+
+.s_i:hover{
+    transform: scale(1.3);
 }
