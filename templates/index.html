@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="manifest" href="/site.webmanifest">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Car-O-Bar</title>
+    <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Ubuntu&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -15,20 +20,25 @@
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
 <style>
-    body { 
-        background-image: url("collage wallpaper.avif");
-        background-color: #cccccc;
+    body {
+        background-image: url(https://img.freepik.com/free-vector/two-men-having-car-accident-isolated-flat-vector-illustration-cartoon-people-looking-automobile-damage_74855-8655.jpg?w=1060&t=st=1655644762~exp=1655645362~hmac=0b1230e414a795486603769b984facda6a71a6e050b85a1bcc8e4927bd3a0308);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: white;
+        background-position: 150px 115px;
+        background-size: 1200px;
         }
 </style>
 </head>
 <body>
-    <h1>Welcome to Car-O-Bar</h1>
+    <h1 style="font-size: 4em">Welcome to Car-O-Bar</h1>
     <div class="card-body" style="text-align: center">
         <div class="col-12" style="text-align: center">
-            <h5><em>This app predicts the price of a car you want to sell. Try filling the details below: </em> </h5>
+            
+            <h5 style="font-size: 30px"><em>This app predicts the price of a car you want to sell. Try filling the details below: </em> </h5>
         </div>
-        <br>
-        <form method="post" accept-charset="utf-8" name="Modelform" style="text-align: center">
+    
+        <form class="form" method="post" accept-charset="utf-8" name="Modelform" style="text-align: center; display: inline-block" >
             <div class="col-md-10 form-group" style="text-align: center">
                 <label style="text-align: center"><b>Select the company:</b> </label><br>
                 <select class="selectpicker form-control" id="company" name="company" required="1"
@@ -60,7 +70,7 @@
                 </select>
             </div>
             <div class="col-md-10 form-group" style="text-align: center">
-                <label><b>Enter the Number of Kilometres that the car has travelled:</b> </label><br>
+                <label><b>Enter the Kilometres the car has travelled:</b> </label><br>
                 <input style="text-align: center" type="text" class="form-control" id="kms_driven" name="kms_driven"
                        placeholder="Enter the kilometres driven ">
             </div>
@@ -68,15 +78,23 @@
                 <button class="btn btn-primary form-control" onclick="send_data()">Predict Price</button>
             </div>
         </form>
-        <br>
+        
         <div class="row">
             <div class="col-12" style="text-align: center">
-                <h4><span id="prediction"></span></h4>
+                <h4 style="font-size: 30px"><span id="prediction"></span></h4>
             </div>
         </div>
     </div>
        
     </div>
+    
+    <footer id="footer" style="text-align:center">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img class="s_i" src="https://img.icons8.com/fluent/28/000000/instagram-new.png"/></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img class="s_i" src="https://img.icons8.com/android/22/4a90e2/facebook-new.png"/></a>
+        <a href = "mailto: adityavijay619@gmail.com"target="_blank" rel="noopener noreferrer"><img class="s_i" src="https://img.icons8.com/fluent/24/4a90e2/gmail--v2.png"/></a>
+        <a href="https://www.linkedin.com/in/aditya-vijay-b191b2215/" target="_blank" rel="noopener noreferrer"> <img class="s_i" src="https://img.icons8.com/fluency/30/000000/linkedin.png"/></a>
+        <p>© Copyright 2022 Car-O-Bar</p>
+    </footer>
     <script>
 
         function load_car_models(company_id,car_model_id)
@@ -117,7 +135,7 @@
             document.getElementById('prediction').innerHTML="WAIT!! Predicting Price.....";
             xhr.onreadystatechange = function(){
                 if(xhr.readyState == XMLHttpRequest.DONE){
-                    document.getElementById('prediction').innerHTML="Prediction: ₹"+xhr.responseText;
+                    document.getElementById('prediction').innerHTML="₹ "+xhr.responseText;
     
                 }
             };
