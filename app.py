@@ -29,6 +29,8 @@ def predict():
     prediction = model.predict(pd.DataFrame(columns=['name', 'company', 'year', 'kms_driven', 'fuel_type'],
                                             data=np.array([car_model, company, year, kms_driven, fuel_type]).reshape(1, 5)))
     print(prediction[0])
+    if(prediction[0]<0):
+        return "Keep it in the museum ₹"
     return str(np.round(prediction[0], 2))
 
 if __name__ == "__main__":
